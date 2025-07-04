@@ -11,10 +11,14 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('testimonials', function (Blueprint $table) {
-            $table->id();
-            $table->timestamps();
-        });
+        // database/migrations/2025_07_04_000003_create_testimonials_table.php
+Schema::create('testimonials', function (Blueprint $table) {
+    $table->id();
+    $table->string('customer_name');
+    $table->text('testimonial');
+    $table->integer('rating');
+    $table->timestamps();
+});
     }
 
     /**

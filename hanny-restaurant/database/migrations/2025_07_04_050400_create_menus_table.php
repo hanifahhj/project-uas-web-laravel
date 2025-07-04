@@ -11,10 +11,17 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('menus', function (Blueprint $table) {
-            $table->id();
-            $table->timestamps();
-        });
+        // database/migrations/2025_07_04_000001_create_menus_table.php
+Schema::create('menus', function (Blueprint $table) {
+    $table->id();
+    $table->string('name');
+    $table->text('description');
+    $table->decimal('price', 8, 2);
+    $table->string('category'); // Food Meat, Fresh Food, etc
+    $table->boolean('is_organic')->default(true);
+    $table->string('image')->nullable();
+    $table->timestamps();
+});
     }
 
     /**
